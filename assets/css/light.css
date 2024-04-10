@@ -1,0 +1,30 @@
+body.light-theme {
+    background-color: #f6f6f6;
+    color: #343a40;
+}
+
+body.light-theme .search-box {
+    background-color: #ececec;
+}
+
+body.light-theme .form-control {
+    background-color: #f6f6f6;
+}
+
+body.light-theme .card {
+    background-color: #ececec;
+}
+
+body.light-theme .small-card {
+    background-color: #e1e1e1;
+}
+
+body.light-theme .btn-primary {
+    background-color: #777777;
+    border-color: black;
+}
+
+body.light-theme .btn-primary:hover {
+    background-color: #555555;
+    border-color: black;
+}

@@ -1,0 +1,70 @@
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.custom-control-label::before {
+    border-radius: 1.5rem;
+}
+
+.custom-control-label::after {
+    border-radius: 50%;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    background-color: #28a745;
+}
+
+.custom-control-input:checked~.custom-control-label::after {
+    background-color: #ffffff;
+}
+
+.search-box {
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.weather-container {
+    position: relative;
+}
+
+.weather-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.main-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.small-card {
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.small-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-text {
+    margin-bottom: 10px;
+}

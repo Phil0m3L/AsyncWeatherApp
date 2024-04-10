@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Weather Forecast</title>
+    {% include "header.html" %}
+</head>
+
+<body class="light-theme">
+    {% include "theme-toggle.html" %}
+
+    <div class="container mt-5">
+        <div class="weather-container">
+            <div class="card main-card">
+                <div class="card-header">
+                    <h5 class="card-title">14-day Forecast for <code>{{ city_data["city_name"] }}</code></h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="small-card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Latitude</h6>
+                                    <div class="card-text">{{ city_data["latitude"] }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="small-card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Longitude</h6>
+                                    <div class="card-text">{{ city_data["longitude"] }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="small-card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Timezone</h6>
+                                    <div class="card-text">{{ city_data["timezone"].replace("_", "/") }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="small-card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Local Time</h6>
+                                    <div class="card-text">{{ city_data["localtime"] }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 text-center">
+        <a href="{{ url_for('weather._app_historical', city=city, city_data_string=city_data_string, temperature_unit=temperature_unit, distance_unit=distance_unit) }}" class="btn btn-primary">Get 14-day Historical Data</a>
+        <button onclick="history.back()" class="btn btn-primary">Go Back</button>
+    </div>
+
+    {% for forecast in forecast_data %}
+        <div class="container mt-5">
+            <div class="weather-container">
+                <div class="card main-card">
+                    <div class="card-header">
+                        <h5 class="card-title"><code>{{ forecast["date"] }}</code></h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Sunrise</h6>
+                                        <div class="card-text">{{ forecast["sunrise"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Sunset</h6>
+                                        <div class="card-text">{{ forecast["sunset"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 d-sm-none"></div>
+                            <div class="col-sm-4 text-center">
+                                <img src="{{ forecast['image_url'] }}" alt="Weather Image" class="weather-image">
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Minimum Temperature</h6>
+                                        <div class="card-text">{{ forecast["min_temp"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Maximum Temperature</h6>
+                                        <div class="card-text">{{ forecast["max_temp"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Condition</h6>
+                                        <div class="card-text">{{ forecast["condition"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Humidity</h6>
+                                        <div class="card-text">{{ forecast["humidity"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Wind Speed</h6>
+                                        <div class="card-text">{{ forecast["wind_speed"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Precipitation</h6>
+                                        <div class="card-text">{{ forecast["precipitation"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Snowfall</h6>
+                                        <div class="card-text">{{ forecast["snowfall"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">UV Index</h6>
+                                        <div class="card-text">{{ forecast["uv_index"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="small-card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Visibility</h6>
+                                        <div class="card-text">{{ forecast["visibility"] }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="container mb-4 text-center">
+        <a href="{{ url_for('weather._app_historical', city=city, city_data_string=city_data_string, temperature_unit=temperature_unit, distance_unit=distance_unit) }}" class="btn btn-primary">Get 14-day Historical Data</a>
+        <button onclick="history.back()" class="btn btn-primary">Go Back</button>
+    </div>
+
+    {% include "footer.html" %}
+
+    {% include "scripts.html" %}
+
+</body>
+
+</html>
