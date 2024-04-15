@@ -2,7 +2,7 @@
 
 ## About
 
-This is an web application which uses the [WeatherAPI.com](https://www.weatherapi.com/) API to fetch weather data for a given location. The application is built using the `Quart` web framework and uses the `aiohttp` library to make HTTP requests to the [WeatherAPI.com](https://www.weatherapi.com/) API.
+This is a web application which uses the [WeatherAPI.com](https://www.weatherapi.com/) API to fetch weather data for a given location. The application is built using the `Quart` web framework and uses the `aiohttp` library to make HTTP requests to the [WeatherAPI.com](https://www.weatherapi.com/) API.
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ This is an web application which uses the [WeatherAPI.com](https://www.weatherap
 
 ```shell
 # Clone the repository
-git clone https://github.com/Rhythm273/AsyncWeatherApp.git
+git clone https://github.com/Phil0m3l/AsyncWeatherApp.git
 # Switch to the project directory
 cd AsyncWeatherApp
 # Create a virtual environment
